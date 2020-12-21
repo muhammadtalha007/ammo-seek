@@ -1,0 +1,182 @@
+/*===== Background Color =====*/
+.theme-bg,
+.theme-bg-layer:before,
+.scl1 > a:before,
+.theme-btn,
+.srv-bx-inr:before,
+.tbs-wrp .nav-tabs > li a:before,
+.product-btns > a:before,
+.testi-nav-thmb:before,
+.post-info > a:before,
+.owl-carousel .owl-nav > button.owl-prev:hover,
+.owl-carousel .owl-nav > button.owl-prev:focus,
+.owl-carousel .owl-nav > button.owl-next:hover,
+.owl-carousel .owl-nav > button.owl-next:focus,
+.srv-bx > i:after,
+.range-rules-classes:before,
+.package-box > i:after,
+.pagination .page-link:focus,
+.pagination .page-link:hover,
+.pagination .page-item span,
+.pagination .page-item.active a,
+.pst-shr > a:hover,
+.pst-shr > a:focus,
+.pst-tgs > a:hover:before,
+.pst-tgs > a:focus:before,
+.res-menu-close:hover,
+.res-menu-btn:hover,
+.res-top-links > a:hover, 
+.res-top-links > a:focus,
+.widget.style2 > h5::before,
+.blue-bg .widget > h5:before
+{
+	background-color: #b59d5a;
+}
+
+
+{
+	background: #b59d5a;
+}
+
+/*===== Text Color =====*/
+.theme-clr,
+.tp-lnks > li a:hover,
+.tp-lnks > li a:focus,
+nav > div > ul li:hover > a, 
+nav > div > ul li a:focus,
+nav > div > ul > li.menu-item-has-children:hover:after,
+nav > div > div.crt-bx > a:hover,
+nav > div > div.crt-bx > a:focus,
+.fea-inf > a,
+.srv-bx-inr > h5 a:hover,
+.srv-bx-inr > h5 a:focus,
+.tbs-inf > h6 a:hover,
+.tbs-inf > h6 a:focus,
+.about-video-inr > a,
+.price ins,
+.product-info > h5 a:hover,
+.product-info > h5 a:focus,
+.testi-car-nav > button:hover:before,
+.testi-car-nav > button:focus:before,
+.post-info > h5 a:hover,
+.post-info > h5 a:focus,
+.post-author > a:hover,
+.post-author > a:focus,
+.widget ul li:before,
+.widget ul li:hover > a,
+.widget ul li > a:focus,
+.cnt-inf-inr > a:hover,
+.cnt-inf-inr> a:focus,
+.blue-bg .cnt-inf-inr > a:hover,
+.blue-bg .cnt-inf-inr > a:focus,
+.range-list.text-right > ul li::before,
+.event-info > h5 a:hover,
+.event-info > h5 a:focus,
+.event-meta > li,
+.event-box.style2 .event-meta > li i,
+.shooting-video > a,
+.package-head > strong sup,
+.package-box > ul > li:before,
+.package-box.active .package-head > strong span,
+.article-info > h5 a:hover,
+.article-info > h5 a:focus,
+.bottom-bar2 > p a,
+.hdr-srch > button:hover,
+.hdr-srch > button:focus,
+.pst-info > h6 a:hover,
+.pst-info > h6 a:focus,
+.pst-inf2 > h4 a:hover,
+.pst-inf2 > h4 a:focus,
+.pst-inf2 > h6 a:hover,
+.pst-inf2 > h6 a:focus,
+.pst-inf2 > a.pst-shr:hover,
+.pst-inf2 > a.pst-shr:focus,
+.rct-inf > h6 a:hover,
+.rct-inf > h6 a:focus,
+.widget.style2 .cate-lst > li,
+.widget.style2 .cate-lst li:hover > a,
+.widget.style2 .cate-lst > li a:focus,
+.blue-bg form button:hover, 
+.blue-bg form button:focus,
+.blue-bg2 form button:hover, 
+.blue-bg2 form button:focus,
+.rcnt-inf2 > h6 a:hover,
+.rcnt-inf2 > h6 a:focus,
+.vdo-inf > h6 a:hover,
+.vdo-inf > h6 a:focus,
+.vdo-inf > a:hover,
+.vdo-inf > a:focus,
+.srch-frm > button:hover,
+.srch-frm > button:focus,
+.lgn-rgstr-frm a:hover,
+.lgn-rgstr-frm a:focus,
+.orgnz-cnt > li a:hover,
+.orgnz-cnt > li a:focus,
+.styld-lst > li:before,
+.pst-rltd-itm > h6 a:hover,
+.pst-rltd-itm > h6 a:focus,
+blockquote:before,
+.comment-inf > h5 a:hover,
+.comment-inf > h5 a:focus,
+.gal-vd > a:hover,
+.gal-vd > a:focus,
+.product-detail-inf > a:hover,
+.product-detail-inf > a:focus,
+.product_meta > span a:hover,
+.product_meta > span a:focus,
+.product-detail-tabs .nav-tabs > li a.active,
+.product-detail-tabs .nav-tabs > li a:hover,
+.product-detail-tabs .nav-tabs > li a:focus,
+.review-link:hover,
+.review-link:focus,
+.prd-tl > h5 a:hover,
+.prd-tl > h5 a:focus, 
+.res-menu > ul li:hover > a, 
+.res-menu > ul li.active > a, 
+.res-menu > ul li a:focus,
+.post-info > a,
+.ltst-prd-inf > h6 a:hover,
+.ltst-prd-inf > h6 a:focus
+{
+	color: #b59d5a;
+}
+
+/*===== Border Color =====*/
+.theme-brd-clr,
+.about-video-inr > a,
+.shooting-video > a,
+.pst-inf2 > a:hover,
+.pst-inf2 > a:focus,
+.fea-cap-img:before,
+.gal-vd > a.theme-clr,
+.gal-vd > a:hover,
+.gal-vd > a:focus,
+.post-info > a
+{
+	border-color: #b59d5a;
+}
+
+/*===== Border Top Color =====*/ 
+
+{
+	border-top-color: #b59d5a;
+}
+
+/*===== Border Right Color =====*/ 
+.fea-bx-inr::before
+{
+	border-right-color: #b59d5a;
+}
+
+/*===== Border Bottom Color =====*/
+.fea-bx-inr::before,
+.fea-inf > a
+{
+	border-bottom-color: #b59d5a;
+}
+
+/*===== Border Left Color =====*/ 
+.fea-bx-inr::after
+{
+	border-left-color: #b59d5a;
+}
