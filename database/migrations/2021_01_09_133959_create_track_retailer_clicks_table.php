@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRetailersTable extends Migration
+class CreateTrackRetailerClicksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateRetailersTable extends Migration
      */
     public function up()
     {
-        Schema::create('retailers', function (Blueprint $table) {
+        Schema::create('track_retailer_clicks', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('link');
+            $table->string('user_id')->nullable();
+            $table->string('retailer_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateRetailersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('retailers');
+        Schema::dropIfExists('track_retailer_clicks');
     }
 }

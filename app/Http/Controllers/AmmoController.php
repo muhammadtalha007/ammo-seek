@@ -46,10 +46,23 @@ class AmmoController extends Controller
         return json_encode($caliber);
     }
 
+    public function getAmmo(Request $request)
+    {
+        $ammoList = Ammo::where('id', $request->id)->first();
+        return view('ammo-link')->with(['ammoList' => $ammoList]);
+    }
+
     public function seekByCaliber(Request $request)
     {
         $caliberId = Caliber::where('name', $request->myCountry)->first()['id'];
-        $ammoList = Ammo::where('caliber', $caliberId)->get();
+        $ammoList = Ammo::where('caliber', $caliberId)->orderBy('price', 'asc')->get();
+        return view('ammo-detail')->with(['ammoList' => $ammoList]);
+    }
+
+    public function getSeekByCaliber($caliberId)
+    {
+//        $caliberId = Caliber::where('name', $request->myCountry)->first()['id'];
+        $ammoList = Ammo::where('caliber', $caliberId)->orderBy('price', 'asc')->get();
         return view('ammo-detail')->with(['ammoList' => $ammoList]);
     }
 

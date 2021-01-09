@@ -21,7 +21,7 @@ class CreateAmmosTable extends Migration
             $table->string('shell_length')->nullable();
             $table->string('retailer')->nullable();
             $table->string('caliber')->nullable();
-            $table->string('price')->nullable();
+            $table->bigInteger('price')->nullable();
             $table->string('mfg')->nullable();
             $table->string('description')->nullable();
             $table->string('condition')->nullable();

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRetailersTable extends Migration
+class CreateRetailerRatingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateRetailersTable extends Migration
      */
     public function up()
     {
-        Schema::create('retailers', function (Blueprint $table) {
+        Schema::create('retailer_ratings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('link');
+            $table->string('user_id');
+            $table->string('retailer_id');
+            $table->string('rating');
+            $table->string('heading')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateRetailersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('retailers');
+        Schema::dropIfExists('retailer_ratings');
     }
 }

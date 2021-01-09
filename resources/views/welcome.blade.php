@@ -1,9 +1,26 @@
 @extends('layouts.app')
 @section('content')
     <section>
-        <div class="gap" style="">
-            <div class="container">
+        <div class="gap">
+            <div class="">
                 <div class="row">
+                    <div class="col-md-2 col-sm-4 col-lg-2">
+                        <div class="sidebar-wrap">
+                            <div style="height: 348px;" class="widget style2 blue-bg2 newsletter-widget">
+                                <h5 itemprop="headline">Quick Seek</h5>
+                                <div>
+                                    @foreach($caliber as $item)
+                                        <span
+                                            style="background-color: whitesmoke;padding: 4px;font-size: 12px;border-radius: 9px;">
+                                        <button
+                                            onclick="seekCaliber(`{{$item->name}}`)">{{$item->name}}
+                                        </button>
+                                        </span>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-8 col-sm-12 col-lg-8">
                         <div class="gap remove-gap">
                             <div id="byCaliber2" class="sec-title2 text-center">
@@ -59,7 +76,8 @@
                                                                placeholder="Type a Caliber to seek ammo...">
                                                     </div>
                                                     <div class="mt-4" style="text-align: center">
-                                                        <button type="submit" class="btn btn-secondary">Start Seeking
+                                                        <button id="startSeekingButton" type="submit"
+                                                                class="btn btn-secondary">Start Seeking
                                                             Now
                                                         </button>
                                                     </div>
@@ -529,11 +547,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-6 col-lg-4">
+                    <div class="col-md-2 col-sm-4 col-lg-2">
                         <div class="sidebar-wrap">
                             <div class="widget style2 blue-bg2 newsletter-widget">
                                 <h5 itemprop="headline">GET IN TOUCH</h5>
-                                <p itemprop="description">Kindly Subscribe to get Updates of Latest Ammo</p>
+                                <p style="font-size: 10px!important;" itemprop="description">Kindly Subscribe to get
+                                    Updates of Latest Ammo</p>
                                 @if($errors->any())
                                     <div class="alert alert-danger">
                                         <h6>{{$errors->first()}}</h6>
@@ -544,10 +563,15 @@
                                         <h6>{{\Illuminate\Support\Facades\Session::get("msg")}}</h6>
                                     </div>
                                 @endif
-                                <form method="post" action="{{url("/subscribe-now")}}" onsubmit="return onSubmitForm();">
+                                <form method="post" action="{{url("/subscribe-now")}}"
+                                      onsubmit="return onSubmitForm();">
                                     @csrf
-                                    <input class="brd-rd30" type="email" id="subscribeEmail" name="subscribeEmail" placeholder="Email Address.....">
-                                    <button class="brd-rd30 theme-btn" type="submit">SUBSCRIBE NOW</button>
+                                    <input style="font-size: 9px!important;" class="brd-rd30" type="email"
+                                           id="subscribeEmail" name="subscribeEmail" placeholder="Email Address.....">
+                                    <button
+                                        style="padding: 0 29px!important;margin-top: 10px!important;font-size: 14px!important;"
+                                        class="brd-rd30 theme-btn" type="submit">SUBSCRIBE NOW
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -725,4 +749,10 @@
             document.getElementById(tab + '2').style.display = 'block';
         }
     </Script>
+    <script>
+        function seekCaliber(caliberName) {
+            document.getElementById('myInput').value = caliberName;
+            document.getElementById('startSeekingButton').click();
+        }
+    </script>
 @endsection

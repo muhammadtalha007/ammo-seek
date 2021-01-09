@@ -6,6 +6,7 @@ use App\ContactUs;
 use App\Http\Controllers\Controller;
 use App\SubscribedUser;
 use App\TrackAmmoClick;
+use App\TrackRetailerClick;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Session;
@@ -69,5 +70,16 @@ class UserController extends Controller
         }
         $trackAmmoClick->ammo_id = $request->ammoId;
         $trackAmmoClick->save();
+    }
+
+    public function recordRetailerClick(Request $request)
+    {
+        $trackRetailerClick = new TrackRetailerClick();
+        if(!empty(Session::get('userId')))
+        {
+            $trackRetailerClick->user_id = Session::get('userId');
+        }
+        $trackRetailerClick->retailer_id = $request->retailerId;
+        $trackRetailerClick->save();
     }
 }

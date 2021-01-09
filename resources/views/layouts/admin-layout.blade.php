@@ -109,6 +109,12 @@
                             </a>
                         </li>
                         <li class="">
+                            <a href="{{url('/retailer-tracking')}}">
+                                <i class="fas fa-flag-checkered"></i>
+                                <span>Retailer Tracking</span>
+                            </a>
+                        </li>
+                        <li class="">
                             <a href="{{url('/users')}}">
                                 <i class="fas fa-users"></i>
                                 <span>Manage Users</span>

@@ -5,8 +5,16 @@
             <div class="col-md-8 mt-2">
                 <h2>Ammo</h2>
             </div>
-            <div class="col-md-3 text-right mt-2 ml-5">
-                <a class="btn btn-primary float-right" href="{{url('/add-ammo')}}">+ Add Ammo</a>
+            <div class="col-md-4 text-right mt-2 row">
+                <div style="display: flex">
+                    <input type="file" name="select_file" id="select_file" style="display: none"
+                           onchange="uploadExcelFile()"/>
+                </div>
+                <div>
+                    <a class="btn btn-primary" style="color: white"
+                       onclick="document.getElementById('select_file').click()">Upload Excel File</a>
+                    <a class="btn btn-primary float-right ml-2" href="{{url('/add-ammo')}}">+ Add Ammo</a>
+                </div>
             </div>
         </div>
     </div>
@@ -80,4 +88,40 @@
             </tbody>
         </table>
     </div>
+    <script>
+        function uploadExcelFile() {
+            let formData = new FormData();
+            formData.append("select_file", document.getElementById('select_file').files[0]);
+            formData.append("_token", "{{ csrf_token() }}");
+            $.ajax
+            ({
+                type: 'POST',
+                url: `{{env('APP_URL')}}/import_excel/import`,
+                data: formData,
+                contentType: false,
+                cache: false,
+                processData: false,
+                success: function (data) {
+                    data = JSON.parse(data);
+                    if (data.status === true) {
+                        swal.fire({
+                            "title": "",
+                            "text": "Excel Imported Successfully!",
+                            "type": "success",
+                            "showConfirmButton": true,
+                            "onClose": function (e) {
+                                window.location.reload();
+                            }
+                        })
+                    } else {
+                        alert(data.message);
+                    }
+                },
+                error: function (data) {
+                    alert(data.message);
+                    console.log("data", data);
+                }
+            });
+        }
+    </script>
 @endsection

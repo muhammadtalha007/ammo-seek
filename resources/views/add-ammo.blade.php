@@ -122,11 +122,11 @@
                         <div class="form-group" style="margin-top: 40px;">
                             <label>Case Material:</label>
                             <select id="caseMaterial" name="caseMaterial" class="form-control">
-                                <option value="Brass case only">Brass case only</option>
-                                <option value="Steel case only">Steel case only</option>
-                                <option value="Aluminum case only">Aluminum case only</option>
-                                <option value="Plastic case only">Plastic case only</option>
-                                <option value="NAS3 case only">NAS3 case only</option>
+                                <option value="Brass">Brass case only</option>
+                                <option value="Steel">Steel case only</option>
+                                <option value="Aluminum">Aluminum case only</option>
+                                <option value="Plastic">Plastic case only</option>
+                                <option value="NAS3">NAS3 case only</option>
                             </select>
                         </div>
                         <div class="form-group">

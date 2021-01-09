@@ -18,6 +18,13 @@
                            id="name">
                     <p id="nameError" class="small" style="color: red;display: none">Name is required.</p>
                 </div>
+                <div class="form-group">
+                    <label>Link:</label>
+                    <input type="text" class="form-control col-lg-5 col-md-5 col-sm-5" placeholder="Enter link"
+                           name="link"
+                           id="link">
+                    <p id="linkError" class="small" style="color: red;display: none">Link is required.</p>
+                </div>
                 <button type="submit" id="btnFetch" class="btn btn-primary spinner-border">Save</button>
             </form>
         </div>
@@ -25,8 +32,13 @@
     <script>
         function onSubmitForm() {
             document.getElementById('nameError').style.display = 'none';
+            document.getElementById('linkError').style.display = 'none';
             if (document.getElementById('name').value === '') {
                 document.getElementById('nameError').style.display = 'block';
+                return false;
+            }
+            if (document.getElementById('link').value === '') {
+                document.getElementById('linkError').style.display = 'block';
                 return false;
             }
         }

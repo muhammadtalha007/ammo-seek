@@ -16,6 +16,7 @@
             <tr>
                 <th>#</th>
                 <th class="text-center">Name</th>
+                <th class="text-center">Link</th>
                 <th class="text-center">Options</th>
             </tr>
             </thead>
@@ -25,6 +26,7 @@
                     <tr>
                         <td>{{$key + 1}}</td>
                         <td class="text-center">{{$item->name}}</td>
+                        <td class="text-center">{{$item->link}}</td>
                         <td class="text-center">
 {{--                            <a href="{{url('/edit-category/'.$item->id)}}">--}}
 {{--                                <button class="btn btn-secondary">Edit</button>--}}

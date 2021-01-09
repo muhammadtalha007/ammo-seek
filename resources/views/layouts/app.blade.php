@@ -71,6 +71,7 @@
                             <li><a href="{{url('/')}}" title="" itemprop="url">HOME</a></li>
                             <li><a href="{{url('about-us')}}" title="" itemprop="url">ABOUT US</a></li>
                             <li><a href="{{url('contact')}}" title="" itemprop="url">CONTACT</a></li>
+                            <li><a href="{{url('retailer-reviews')}}" title="" itemprop="url">RETAILER REVIEWS</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -153,7 +154,7 @@
                         <div class="col-md-4 col-sm-2 col-lg-4"></div>
                         <div class="col-md-4 col-sm-8 col-lg-4">
                             <div class="widget about-widget">
-                                <div class="logo"><a href="index-2.html" title="" itemprop="url"><h1
+                                <div class="logo"><a  title="" itemprop="url"><h1
                                             style="color: white" class="mt-3">Ammo Seek</h1></a></div>
                                 <p itemprop="description">Appreciate our broad services of Ammo Seek Searches</p>
                             </div>

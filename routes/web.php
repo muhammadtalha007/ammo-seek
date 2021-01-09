@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    $caliber = \Illuminate\Support\Facades\DB::table('Calibers')->limit(9)->get();
+    return view('welcome')->with(['caliber' => $caliber]);
 });
 Route::get('/working-tutorial', "DomainsController@tutorialWorking")->middleware('dashboard')->name('home')->middleware('dashboard');
 Route::get('add-password', "PasswordsController@addPassword")->middleware('dashboard');
@@ -27,16 +28,15 @@ Route::post('/admin/login', "AdminController@login")->name('admin.login');
 Route::get('admin-dashboard', "AdminController@adminDashboard");
 Route::post('admin-logout', "AdminController@logout")->name('admin.logout');
 
-Route::get('fbx', function (){
-  return view('fbx');
+Route::get('fbx', function () {
+    return view('fbx');
 });
 
-Route::get('logout-user', function (){
+Route::get('logout-user', function () {
     \Illuminate\Support\Facades\Session::flush();
     \Illuminate\Support\Facades\Auth::logout();
     return redirect('/');
 })->name('logout-user');
-
 
 
 Route::get('category', 'CategoryController@getCategoryView')->middleware('dashboard');
@@ -55,9 +55,9 @@ Route::post('save-edited-event', "EventsController@saveEditedEvent")->middleware
 
 Route::get('calender', 'CalenderController@getCalenderView')->middleware('dashboard');
 Route::get('get-calender', 'CalenderController@getCalendarData')->middleware('dashboard');
-Route::post('calendar/create','CalenderController@create');
-Route::post('calendar/update','CalenderController@update');
-Route::post('calendar/delete','CalenderController@destroy');
+Route::post('calendar/create', 'CalenderController@create');
+Route::post('calendar/update', 'CalenderController@update');
+Route::post('calendar/delete', 'CalenderController@destroy');
 
 //new work
 Route::post('login-admins', "AdminController@login")->name('login-admins');
@@ -159,9 +159,21 @@ Route::get('/contact-us', function () {
 Route::post('click/record', "UserController@recordClick");
 Route::get('/ammo-tracking', function () {
     $ammoTracking = \App\Ammo::all();
-    foreach ($ammoTracking as $item)
-    {
+    foreach ($ammoTracking as $item) {
         $item['clicked'] = \App\TrackAmmoClick::where('ammo_id', $item->id)->count();
     }
     return view('ammo-tracking')->with(['ammoTracking' => $ammoTracking]);
+});
+Route::post('/import_excel/import', 'ImportExcelController@import');
+Route::get('seek-by-caliber/{id}', "AmmoController@getSeekByCaliber");
+Route::get('/retailer-reviews',"RetailerController@reviews");
+Route::get('/share-ammo',"AmmoController@getAmmo");
+Route::post('/save-rating',"RetailerController@saveReviews");
+Route::post('click/record/retailer', "UserController@recordRetailerClick");
+Route::get('/retailer-tracking', function () {
+    $retailerTracking = \App\Retailer::all();
+    foreach ($retailerTracking as $item) {
+        $item['clicked'] = \App\TrackRetailerClick::where('retailer_id', $item->id)->count();
+    }
+    return view('retailer-tracking')->with(['retailerTracking' => $retailerTracking]);
 });
