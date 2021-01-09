@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    $caliber = \Illuminate\Support\Facades\DB::table('Calibers')->limit(9)->get();
+    $caliber = \Illuminate\Support\Facades\DB::table('calibers')->limit(9)->get();
     return view('welcome')->with(['caliber' => $caliber]);
 });
 Route::get('/working-tutorial', "DomainsController@tutorialWorking")->middleware('dashboard')->name('home')->middleware('dashboard');

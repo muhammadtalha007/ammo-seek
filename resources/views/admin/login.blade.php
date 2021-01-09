@@ -46,7 +46,7 @@
         <!-- Login Form -->
         <form method="POST" action="{{ route('login-admins') }}" onsubmit="return onSubmitForm();">
             @csrf
-            <input type="text" id="email" class="fadeIn second" name="email" placeholder="email">
+            <input type="text" id="email" class="fadeIn second" name="email" placeholder="username">
             <p id="emailAddressError" style="color: red;display: none">Email Address is required.</p>
             <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
             <p id="passwordError" style="color: red;display: none">Password is required.</p>
