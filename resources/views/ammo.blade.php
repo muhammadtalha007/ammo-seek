@@ -49,7 +49,7 @@
                         <td class="text-center">{{$item->description}}</td>
                         <td class="text-center">{{$item->ammo_type}}</td>
                         <td class="text-center">{{\App\Retailer::where('id',$item->retailer)->first()['name']}}</td>
-                        <td class="text-center">{{\App\Caliber::where('id',$item->retailer)->first()['name']}}</td>
+                        <td class="text-center">{{\App\Caliber::where('id',$item->caliber)->first()['name']}}</td>
                         <td class="text-center">{{$item->condition}}</td>
                         <td class="text-center">{{$item->case_material}}</td>
                         <td class="text-center">{{$item->shipping}}</td>
