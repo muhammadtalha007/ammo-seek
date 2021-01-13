@@ -90,7 +90,7 @@ class AmmoController extends Controller
         if (!empty($request->handgunShipping)) {
             $ammos->where('shipping', $request->handgunShipping);
         }
-        $ammoList = $ammos->get();
+        $ammoList = $ammos->orderBy('price', 'asc')->get();
         return view('ammo-detail')->with(['ammoList' => $ammoList]);
     }
 
@@ -118,7 +118,7 @@ class AmmoController extends Controller
         if (!empty($request->rifleShipping)) {
             $ammos->where('shipping', $request->rifleShipping);
         }
-        $ammoList = $ammos->get();
+        $ammoList = $ammos->orderBy('price', 'asc')->get();
         return view('ammo-detail')->with(['ammoList' => $ammoList]);
     }
 
@@ -146,7 +146,7 @@ class AmmoController extends Controller
         if (!empty($request->rimfireShipping)) {
             $ammos->where('shipping', $request->rimfireShipping);
         }
-        $ammoList = $ammos->get();
+        $ammoList = $ammos->orderBy('price', 'asc')->get();
         return view('ammo-detail')->with(['ammoList' => $ammoList]);
     }
 
@@ -171,7 +171,7 @@ class AmmoController extends Controller
         if (!empty($request->shotgunShipping)) {
             $ammos->where('shipping', $request->shotgunShipping);
         }
-        $ammoList = $ammos->get();
+        $ammoList = $ammos->orderBy('price', 'asc')->get();
         return view('ammo-detail')->with(['ammoList' => $ammoList]);
     }
 
