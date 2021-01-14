@@ -19,15 +19,20 @@ class ImportExcelController extends Controller
         $dataList = $csvModal->getData();
         foreach ($dataList as $data) {
 //            $count++;
-                $ammo = new Ammo();
+                if ($data['unique_id'] == 'null'){
+                    $ammo = new Ammo();
+                }else{
+                    $ammo = Ammo::where('id', $data['unique_id'])->first();
+                }
+
                 $ammo->ammo_type = $data['ammo_type'];
 //            if ($data['ammo_type'] == 'Shotgun' || $data['ammo_type'] == 'shotgun') {
                 $ammo->gauge = $data['gauge'];
                 $ammo->shot_type = $data['shot_type'];
                 $ammo->shell_length = $data['shell_length'];
 //            }
-                $ammo->retailer = $data['retailer'];
-                $ammo->caliber = $data['caliber'];
+                $ammo->retailer = $data['retailer_id'];
+                $ammo->caliber = $data['caliber_id'];
                 $ammo->price = $data['price'];
                 $ammo->mfg = $data['mfg'];
                 $ammo->description = $data['description'];
@@ -37,7 +42,12 @@ class ImportExcelController extends Controller
                 $ammo->rounds = $data['rounds'];
                 $ammo->grain_weight = $data['grain_weight'];
                 $ammo->ammo_external_link = $data['ammo_external_weight'];
-                $ammo->save();
+                if (empty($data['unique_id']) || $data['unique_id'] == 'null'){
+                    $ammo->save();
+                }else{
+                    $ammo->update();
+                }
+
         }
         return json_encode(['status' => true, 'message' => 'Excel Data Imported successfully.']);
     }

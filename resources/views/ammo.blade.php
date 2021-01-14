@@ -22,7 +22,8 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>#</th>
+                <th>Record No.</th>
+                <th>Unique Id</th>
                 <th class="text-center">Description</th>
                 <th class="text-center">Ammo Type</th>
                 <th class="text-center">Retailer</th>
@@ -46,6 +47,7 @@
                 @foreach($ammo as $key => $item)
                     <tr>
                         <td>{{$key + 1}}</td>
+                        <td>{{$item->id}}</td>
                         <td class="text-center">{{$item->description}}</td>
                         <td class="text-center">{{$item->ammo_type}}</td>
                         <td class="text-center">{{\App\Retailer::where('id',$item->retailer)->first()['name']}}</td>

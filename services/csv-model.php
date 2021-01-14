@@ -18,21 +18,22 @@ class CSVModal implements ToCollection
             if ($count > 0){
                 if (!empty($row[0])) {
                     array_push($this->data, [
-                        "ammo_type" => $row[0],
-                        "retailer" => $row[1],
-                        "caliber" => $row[2],
-                        "price" => $row[3],
-                        "mfg" => $row[4],
-                        "description" => $row[5],
-                        "condition" => $row[6],
-                        "case_material" => $row[7],
-                        "shipping" => $row[8],
-                        "rounds" => $row[9],
-                        "grain_weight" => $row[10],
-                        "ammo_external_weight" => $row[11],
-                        "gauge" => $row[12],
-                        "shot_type" => $row[13],
-                        "shell_length" => $row[14],
+                        "unique_id" => $row[0],
+                        "ammo_type" => $row[1],
+                        "retailer_id" => $row[2],
+                        "caliber_id" => $row[3],
+                        "price" => $row[4],
+                        "mfg" => $row[5],
+                        "description" => $row[6],
+                        "condition" => $row[7],
+                        "case_material" => $row[8],
+                        "shipping" => $row[9],
+                        "rounds" => $row[10],
+                        "grain_weight" => $row[11],
+                        "ammo_external_weight" => $row[12],
+                        "gauge" => $row[13],
+                        "shot_type" => $row[14],
+                        "shell_length" => $row[15],
                     ]);
                 }
             }
