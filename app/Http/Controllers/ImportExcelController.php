@@ -42,7 +42,7 @@ class ImportExcelController extends Controller
                 $ammo->rounds = $data['rounds'];
                 $ammo->grain_weight = $data['grain_weight'];
                 $ammo->ammo_external_link = $data['ammo_external_weight'];
-                if (empty($data['unique_id']) || $data['unique_id'] == 'null'){
+                if ($data['unique_id'] == 'null'){
                     $ammo->save();
                 }else{
                     $ammo->update();
