@@ -17,6 +17,7 @@ class CreateRetailersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('link');
+            $table->string('secret_link')->nullable();
             $table->timestamps();
         });
     }

@@ -30,6 +30,7 @@ class CreateAmmosTable extends Migration
             $table->string('rounds')->nullable();
             $table->string('grain_weight')->nullable();
             $table->string('ammo_external_link')->nullable();
+            $table->string('unique_id')->nullable();
             $table->timestamps();
         });
     }

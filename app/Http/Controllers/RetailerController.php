@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Ammo;
 use App\Retailer;
 use App\RetailerRating;
 use Illuminate\Http\Request;
@@ -16,10 +17,23 @@ class RetailerController extends Controller
             $retailer->name = $request->name;
             $retailer->link = $request->link;
             $retailer->save();
+            $retailer = Retailer::where('id', $retailer->id)->first();
+            $retailer->secret_link = url('/retailer-route') . "?id=" .$retailer->id;
+            $retailer->update();
             return redirect('retailer');
         } catch (\Exception $exception) {
             return redirect()->back()->withErrors([$exception->getMessage()]);
         }
+    }
+
+    public function retailerData(Request  $request){
+        $request->id = base64_decode($request->id);
+        if (empty($request->id)){
+            return json_encode("Access Denied.");
+        }
+        $retailer = Retailer::where('id', $request->id)->first();
+        $ammo = Ammo::where('retailer', $request->id)->get();
+        return view('retailer-view')->with(['retailer' => $retailer, 'ammoList' => $ammo]);
     }
 
     public function deleteRetailer($id)

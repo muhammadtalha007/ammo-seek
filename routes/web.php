@@ -116,6 +116,7 @@ Route::get('/add-caliber', function () {
 Route::post('save-caliber-data', "CaliberController@saveCaliberData");
 Route::get('delete-caliber/{id}', "CaliberController@deleteCaliber");
 Route::post('save-retailer-data', "RetailerController@saveRetailerData");
+Route::get('retailer-route/', "RetailerController@retailerData");
 Route::get('delete-retailer/{id}', "RetailerController@deleteRetailer");
 Route::post('save-ammo-data', "AmmoController@saveAmmoData");
 Route::get('/ammo', function () {
@@ -165,6 +166,7 @@ Route::get('/ammo-tracking', function () {
     return view('ammo-tracking')->with(['ammoTracking' => $ammoTracking]);
 });
 Route::post('/import_excel/import', 'ImportExcelController@import');
+Route::post('/vendor/import_excel/import', 'ImportExcelController@vendorImport');
 Route::get('seek-by-caliber/{id}', "AmmoController@getSeekByCaliber");
 Route::get('/retailer-reviews',"RetailerController@reviews");
 Route::get('/share-ammo',"AmmoController@getAmmo");

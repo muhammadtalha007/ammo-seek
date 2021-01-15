@@ -17,6 +17,7 @@
                 <th>#</th>
                 <th class="text-center">Name</th>
                 <th class="text-center">Link</th>
+                <th class="text-center">Secret Route</th>
                 <th class="text-center">Options</th>
             </tr>
             </thead>
@@ -27,6 +28,7 @@
                         <td>{{$key + 1}}</td>
                         <td class="text-center">{{$item->name}}</td>
                         <td class="text-center">{{$item->link}}</td>
+                        <td class="text-center"><a target="_blank" href="{{url('')}}/retailer-route?id={{base64_encode($item->id)}}">{{url('')}}/retailer-route?id={{base64_encode($item->id)}}</a></td>
                         <td class="text-center">
 {{--                            <a href="{{url('/edit-category/'.$item->id)}}">--}}
 {{--                                <button class="btn btn-secondary">Edit</button>--}}

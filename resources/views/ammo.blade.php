@@ -47,7 +47,7 @@
                 @foreach($ammo as $key => $item)
                     <tr>
                         <td>{{$key + 1}}</td>
-                        <td>{{$item->id}}</td>
+                        <td>{{$item->unique_id}}</td>
                         <td class="text-center">{{$item->description}}</td>
                         <td class="text-center">{{$item->ammo_type}}</td>
                         <td class="text-center">{{\App\Retailer::where('id',$item->retailer)->first()['name']}}</td>
