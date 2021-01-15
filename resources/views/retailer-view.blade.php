@@ -22,7 +22,7 @@
         <div class="lg-ad-sec" style="padding: 0!important;">
             <div class="container">
                 <div class="lg-ad-inr">
-                    <div class="logo"><a href="{{url('/retailer-route')}}?id={{$retailer->id}}" title="Logo" itemprop="url"><h4 class="mt-3">Ammo Seek</h4>
+                    <div class="logo"><a href="{{url('/retailer-route')}}?id={{base64_encode($retailer->id)}}" title="Logo" itemprop="url"><h4 class="mt-3">Ammo Seek</h4>
                         </a></div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <nav>
                     <div>
                         <ul>
-                            <li><a href="{{url('/retailer-route')}}?id={{$retailer->id}}" title="" itemprop="url">Welcome Vendor {{$retailer->name}}</a></li>
+                            <li><a href="{{url('/retailer-route')}}?id={{base64_encode($retailer->id)}}" title="" itemprop="url">Welcome Vendor {{$retailer->name}}</a></li>
                         </ul>
                     </div>
                 </nav>
