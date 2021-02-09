@@ -18,7 +18,6 @@ class ImportExcelController extends Controller
         \Excel::import($csvModal, request()->file('select_file'));
         $dataList = $csvModal->getData();
         foreach ($dataList as $data) {
-//            $count++;
                 if ($data['unique_id'] == 'null'){
                     $ammo = new Ammo();
                 }else{
@@ -30,11 +29,9 @@ class ImportExcelController extends Controller
                 }
               $ammo->unique_id = $data['unique_id'];
                 $ammo->ammo_type = $data['ammo_type'];
-//            if ($data['ammo_type'] == 'Shotgun' || $data['ammo_type'] == 'shotgun') {
                 $ammo->gauge = $data['gauge'];
                 $ammo->shot_type = $data['shot_type'];
                 $ammo->shell_length = $data['shell_length'];
-//            }
                 $ammo->retailer = $data['retailer_id'];
                 $ammo->caliber = $data['caliber_id'];
                 $ammo->price = $data['price'];
